@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Resume - Liam Manese</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-link.active {
+            color: #3b82f6;
+            border-bottom: 2px solid #3b82f6;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-gray-500">Squarevendo<span
+                    class="text-blue-500"> Web Studio</span></a>
+
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html#home" class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Home</a>
+                <a href="index.html#about"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">About</a>
+                <!-- <a href="index.html#marketing"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Marketing</a> -->
+                <a href="index.html#skills"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Skills</a>
+                <a href="index.html#projects"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Projects</a>
+                <!-- <a href="index.html#testimonials"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Testimonials</a> -->
+                <a href="index.html#contact"
+                    class="nav-link font-bold py-2 hover:text-blue-500 transition-colors">Contact</a>
+                <a href="resume.html" class="nav-link font-bold py-2 text-blue-500 font-medium">Resume</a>
+            </nav>
+
+            <!-- Theme Toggle -->
+            <button id="theme-toggle"
+                class="p-2 rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors">
+                <i class="fas fa-moon text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Resume Content -->
+    <main class="pt-20">
+        <div class="container mx-auto px-4 py-12">
+            <div class="max-w-4xl mx-auto">
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h1 class="text-4xl font-bold mb-4">Liam Manese</h1>
+                    <p class="text-xl text-gray-600 mb-4">Full Stack Developer</p>
+                    <div class="flex justify-center space-x-4 text-gray-600">
+                        <span><i class="fas fa-envelope mr-2"></i>squarevendo@gmail.com</span>
+                        <span><i class="fas fa-phone mr-2"></i>+1 (780) 235-6518</span>
+                        <span><i class="fas fa-map-marker-alt mr-2"></i>Edmonton, Alberta</span>
+                    </div>
+                </div>
+
+                <!-- Summary -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Professional Summary</h2>
+                    <p class="text-gray-600">
+                        Experienced Frontend Developer with 4+ years of expertise in creating responsive and
+                        user-friendly web applications. Background in IT support and servicing.
+                        Skilled in modern web technologies and digital marketing strategies. Proven track record of
+                        delivering high-quality
+                        solutions that drive business growth and enhance user experience.
+                    </p>
+                </section>
+
+                <!-- Experience -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Work Experience</h2>
+
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold">Full Stack Developer</h3>
+                        <p class="text-gray-600">Squarevendo Digital Solutions Ltd. | 2022 - Present</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-600">
+                            <li>Design and Development of responsive web applications using React and modern JavaScript
+                            </li>
+                            <li>Web App Design and Development</li>
+                            <li>Collaborated with UX/UI designers to create intuitive user interfaces</li>
+                            <li>Optimized website performance, reducing load time by 50%</li>
+                            <li>Developed and maintained client websites using HTML, CSS, and JavaScript</li>
+                            <li>Implemented digital marketing strategies to increase client engagement</li>
+                            <li>Created responsive designs that work across all devices</li>
+                            <li>Managed social media campaigns and content creation</li>
+                        </ul>
+                    </div>
+
+                    <!-- <div class="mb-8">
+                        <h3 class="text-xl font-bold">Web and Mobile Application Development</h3>
+                        <p class="text-gray-600">Web Designer | 2019 - 2021</p>
+                        <ul class="list-disc list-inside mt-4 text-gray-600">
+                            <li>Developed and maintained client websites using HTML, CSS, and JavaScript</li>
+                            <li>Implemented digital marketing strategies to increase client engagement</li>
+                            <li>Created responsive designs that work across all devices</li>
+                            <li>Managed social media campaigns and content creation</li>
+                        </ul>
+                    </div> -->
+                </section>
+
+                <!-- Education -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Education</h2>
+                    <div class="mb-8">
+                        <h3 class="text-xl font-bold">Diploma in Web and Mobile Application Development</h3>
+                        <p class="text-gray-600">CDI College | 2019 - 2021</p>
+                        <p class="text-gray-600 mt-2">Specialized in Web and Mobile App Development and BackEnd Development</p>
+                        <br>
+                        <h3 class="text-xl font-bold">Software Development</h3>
+                        <p class="text-gray-600">Southern Alberta Institute of Technology (SAIT) | 2019</p>
+                        <p class="text-gray-600 mt-2">HTML, CSS JavaScript, Python, SQL Server, ASp.net MVC 5 core and WinForms C#. </p>
+                        <br>
+                        <h3 class="text-xl font-bold">PC Support and Servicing Certificate, Cisco IT Essentials</h3>
+                        <p class="text-gray-600">Northern Alberta Institute of Technology | 2016</p>
+                        <p class="text-gray-600 mt-2">Specialized in PC Support and Servicing</p>
+                        <p class="text-gray-600 mt-2">Completed hands-on training in hardware and software troubleshooting</p>
+                        <p class="text-gray-600 mt-2">
+                            • Skills and practical knowledge of how computers work.<br>
+                            • How to assemble computers and how to troubleshoot hardware and software issues.<br>
+                            • Knowledge Fundamentals and advanced concepts of computers hardware and software.<br>
+                            • Troubleshooting skills, networking, security and IT professionalism.<br>
+                            • Hands-on labs and online virtual learning tools, develop critical thinking and complex problem-solving skills.<br>
+                            • Introduction to the personal computer, computer assembly.<br>
+                            • Lab procedures and tool use<br>
+                            • Preventive maintenance and troubleshooting process<br>
+                            • Windows installation and Windows configuration and management<br>
+                            • Networks concepts and applied networking<br>
+                            • Laptops and mobile devices, Linux and OS X operating systems<br>
+                            • Printer configuration<br>
+                            • Network Security<br>
+                            • Advanced troubleshooting
+                        </p>
+
+
+
+
+                    </div>
+                </section>
+
+                <!-- Skills -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Skills</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2">Technical Skills</h3>
+                            <ul class="text-gray-600">
+                                <li>HTML5/CSS3</li>
+                                <li>JavaScript/React</li>
+                                <li>Node.js</li>
+                                <li>Git/GitHub</li>
+                                <li>Responsive Design</li>
+                                <li>React Development</li>
+                                <li>Next.js</li>
+                            </ul>
+                        </div>
+                        <!-- <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2">Digital Marketing</h3>
+                            <ul class="text-gray-600">
+                                <li>SEO</li>
+                                <li>Social Media Marketing</li>
+                                <li>Content Marketing</li>
+                                <li>Google Analytics</li>
+                                <li>Email Marketing</li>
+                            </ul>
+                        </div> -->
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold mb-2">Soft Skills</h3>
+                            <ul class="text-gray-600">
+                                <li>Project Management</li>
+                                <li>Team Leadership</li>
+                                <li>Problem Solving</li>
+                                <li>Communication</li>
+                                <li>Time Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Certifications -->
+                <section class="mb-12">
+                    <h2 class="text-2xl font-bold mb-4 border-b pb-2">Certifications</h2>
+                    <div class="space-y-4">
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold">Web and Mobile Application Development-Diploma</h3>
+                            <p class="text-gray-600">CDI College | December 2021</p>
+                            <p class="text-gray-600 mt-2"></p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold">Google IT Support Professional Certificate</h3>
+                            <p class="text-gray-600">Google | MAY 2020</p>
+                            <p class="text-gray-600 mt-2">Credential ID: JL25GPS9QSUA</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold">PC Support and Servicing Certificate, Cisco IT Essentials</h3>
+                            <p class="text-gray-600">Northern Alberta Institute of Technology | 2016</p>
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow-sm">
+                            <h3 class="font-bold">Cisco: Intro to Cybersecurity - EN 1116</h3>
+                            <p class="text-gray-600">Cisco | 2016</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Download Button -->
+                <!-- <div class="text-center mt-12">
+                    <a href="#"
+                        class="inline-block px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
+                        <i class="fas fa-download mr-2"></i>Download Resume
+                    </a>
+                </div> -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="https://squarevendo.com/" class="text-2xl font-bold">Squarevendo<span class="text-blue-500"> Web Studio</span></a>
+                    <p class="mt-2 text-gray-400 max-w-md">
+                        Beautiful, responsive Apps and websites with clean and efficient code.
+                    </p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <!-- <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                        <i class="fab fa-dribbble text-xl"></i>
+                    </a> -->
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400">
+                    &copy; 2022 Squarevendo Web Studio. All rights reserved.
+                </p>
+                <div class="mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mx-3"></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors mx-3"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+
+            if (body.classList.contains('dark-mode')) {
+                themeIcon.classList.remove('fa-moon');
+                themeIcon.classList.add('fa-sun');
+                themeIcon.classList.add('text-yellow-400');
+                themeIcon.classList.remove('text-gray-800');
+                document.documentElement.style.setProperty('--bg-color', '#1f2937');
+                document.documentElement.style.setProperty('--text-color', '#f3f4f6');
+            } else {
+                themeIcon.classList.remove('fa-sun');
+                themeIcon.classList.add('fa-moon');
+                themeIcon.classList.remove('text-yellow-400');
+                themeIcon.classList.add('text-gray-800');
+                document.documentElement.style.setProperty('--bg-color', '#f3f4f6');
+                document.documentElement.style.setProperty('--text-color', '#1f2937');
+            }
+        });
+    </script>
+</body>
+
+</html>
