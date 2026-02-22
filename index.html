@@ -14,6 +14,101 @@
             scroll-behavior: smooth;
         }
 
+        body {
+            background-color: #141414;
+        }
+
+        /* Page load - subtle reveal */
+        body {
+            animation: pageLoadFade 0.5s ease-out forwards;
+        }
+
+        @keyframes pageLoadFade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Hero - intuitive cascade: gentle rise, natural reading order */
+        @keyframes heroReveal {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Soft attention draw for CTAs after they appear */
+        @keyframes softPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        .hero-animate {
+            opacity: 0;
+            animation: heroReveal 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        .hero-animate-delay-1 { animation-delay: 0.05s; }
+        .hero-animate-delay-2 { animation-delay: 0.12s; }
+        .hero-animate-delay-3 { animation-delay: 0.2s; }
+        .hero-animate-delay-4 { animation-delay: 0.32s; }
+        .hero-animate-delay-5 { animation-delay: 0.44s; }
+        .hero-animate-delay-6 { animation-delay: 0.56s; }
+        .hero-animate-delay-7 { animation-delay: 0.68s; }
+        .hero-animate-delay-8 { animation-delay: 0.8s; }
+
+        /* CTAs get subtle attention pulse once after appearing */
+        .hero-cta-pulse {
+            animation: softPulse 1.2s ease-in-out 0.9s both;
+        }
+
+        /* Scroll-triggered: sections reveal when they enter view */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Stagger children within revealed section */
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .reveal-on-scroll.visible .reveal-stagger > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(1) { transition-delay: 0s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(2) { transition-delay: 0.08s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(3) { transition-delay: 0.16s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(4) { transition-delay: 0.24s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(5) { transition-delay: 0.32s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(6) { transition-delay: 0.4s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(7) { transition-delay: 0.48s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(8) { transition-delay: 0.56s; }
+        .reveal-on-scroll.visible .reveal-stagger > *:nth-child(9) { transition-delay: 0.64s; }
+
+        .project-card {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
         .project-card:hover .project-overlay {
             opacity: 1;
         }
@@ -25,6 +120,12 @@
         .nav-link.active {
             color: #3b82f6;
             border-bottom: 2px solid #3b82f6;
+        }
+
+        /* Form placeholder styling for dark theme */
+        input::placeholder,
+        textarea::placeholder {
+            color: #737373;
         }
 
         @media (max-width: 768px) {
@@ -39,13 +140,13 @@
     </style>
 </head>
 
-<body class="font-sans bg-gray-50 text-gray-800">
+<body class="font-sans text-gray-200" style="background-color: #141414;">
     <!-- Header/Navigation -->
-    <header class="fixed w-full bg-white shadow-md z-50">
+    <header class="fixed w-full z-50 transition-all duration-300" style="background-color: rgba(20, 20, 20, 0.95); box-shadow: 0 1px 20px rgba(0,0,0,0.3);">
         <div class="container mx-auto px-20 py-1 flex justify-between items-center">
             <a href="#" class="flex items-center px-2">
                 <img src="images/SQLOGO.png" alt="Squarevendo Logo" style="width: 160px; height: 160px;" class="object-contain">
-                <span class="text-2xl font-bold text-gray-800"><span class="text-blue-500"></span></span>
+                <span class="text-2xl font-bold text-gray-200"><span class="text-blue-500"></span></span>
             </a>
 
             <!-- Desktop Navigation -->
@@ -62,7 +163,7 @@
             </nav>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-gray-800 focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
                 <i class="fas fa-bars text-2xl"></i>
             </button>
 
@@ -74,7 +175,7 @@
         </div>
 
         <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="mobile-menu md:hidden flex-col space-y-4 bg-white w-full py-4 px-6 shadow-md">
+        <div id="mobile-menu" class="mobile-menu md:hidden flex-col space-y-4 w-full py-4 px-6 shadow-md" style="background-color: #1a1a1a;">
             <a href="#home" class="nav-link py-2 hover:text-blue-500 transition-colors">Home</a>
             <!-- <a href="#about" class="nav-link py-2 hover:text-blue-500 transition-colors">About</a>
             <a href="#skills" class="nav-link py-2 hover:text-blue-500 transition-colors">Skills</a> -->
@@ -85,37 +186,37 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gray-50 pt-16">
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16" style="background-color: #141414;">
         <div class="container mx-auto px-4 py-16 flex flex-col items-center text-center">
             <div class="max-w-3xl">
-                <p class="text-blue-800 font-large mb-2"></p>
-                <h1 class="text-4xl md:text-6xl font-bold mb-4">Squarevendo Web Studio</h1>
-                <h2 class="text-2xl md:text-3xl text-gray-600 mb-6">Web and Digital Platform Services</h2>
-                <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+                <p class="text-blue-400 font-large mb-2 hero-animate hero-animate-delay-1"></p>
+                <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white hero-animate hero-animate-delay-2">Squarevendo Web Studio</h1>
+                <h2 class="text-2xl md:text-3xl mb-6 hero-animate hero-animate-delay-3" style="color: #a1a1aa;">Web and Digital Platform Services</h2>
+                <p class="mb-8 max-w-2xl mx-auto hero-animate hero-animate-delay-4" style="color: #a1a1aa;">
                     Life is beautiful, Let's get this done. Let's work together to bring
                     your ideas to life!
                 </p>
-                <div class="flex flex-wrap justify-center gap-4">
+                <div class="flex flex-wrap justify-center gap-4 hero-animate hero-animate-delay-5 hero-cta-pulse">
                     <a href="#contact"
-                        class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-colors">
+                        class="px-6 py-3 bg-blue-500 text-white rounded-full hover:bg-blue-600 transition-all duration-300 hover:scale-105">
                         Contact Me
                     </a>
                     <a href="#projects"
-                        class="px-6 py-3 border border-blue-500 text-blue-500 rounded-full hover:bg-blue-50 transition-colors">
+                        class="px-6 py-3 border-2 border-blue-500 text-blue-400 rounded-full hover:bg-blue-500 hover:text-white transition-all duration-300 hover:scale-105">
                         View Projects
                     </a>
                 </div>
-                <div class="flex mt-8 justify-center space-x-4">
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+                <div class="flex mt-8 justify-center space-x-4 hero-animate hero-animate-delay-6">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors" style="color: #a1a1aa;">
                         <i class="fab fa-github text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors" style="color: #a1a1aa;">
                         <i class="fab fa-linkedin text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors" style="color: #a1a1aa;">
                         <i class="fab fa-twitter text-2xl"></i>
                     </a>
-                    <a href="#" class="text-gray-600 hover:text-blue-500 transition-colors">
+                    <a href="#" class="text-gray-400 hover:text-blue-500 transition-colors" style="color: #a1a1aa;">
                         <i class="fab fa-dribbble text-2xl"></i>
                     </a>
                 </div>
@@ -375,12 +476,12 @@
     </section> 
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="projects" class="py-20 reveal-on-scroll" style="background-color: #141414;">
+        <div class="container mx-auto px-4 reveal-stagger">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Happy Clients</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Happy Clients</h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                <p class="mt-4 max-w-2xl mx-auto" style="color: #a1a1aa;">
                     Here are some of my recent projects. Click on them to see more details.
                 </p>
             </div>
@@ -391,14 +492,14 @@
                     class="filter-btn m-2 px-4 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
                     data-filter="all">All</button>
                 <button
-                    class="filter-btn m-2 px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-blue-500 hover:text-white transition-colors"
-                    data-filter="web">Web Design</button>
+                    class="filter-btn m-2 px-4 py-2 rounded-full text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    style="background-color: #262626;" data-filter="web">Web Design</button>
                 <button
-                    class="filter-btn m-2 px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-blue-500 hover:text-white transition-colors"
-                    data-filter="app">App Development</button>
+                    class="filter-btn m-2 px-4 py-2 rounded-full text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    style="background-color: #262626;" data-filter="app">App Development</button>
                 <button
-                    class="filter-btn m-2 px-4 py-2 rounded-full bg-gray-200 text-gray-800 hover:bg-blue-500 hover:text-white transition-colors"
-                    data-filter="ui">UI/UX Design</button>
+                    class="filter-btn m-2 px-4 py-2 rounded-full text-gray-300 hover:bg-blue-600 hover:text-white transition-colors"
+                    style="background-color: #262626;" data-filter="ui">UI/UX Design</button>
             </div>
 
             <!-- Projects Grid -->
@@ -748,27 +849,27 @@
     </section> -->
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white">
-        <div class="container mx-auto px-4">
+    <section id="contact" class="py-20 reveal-on-scroll" style="background-color: #141414;">
+        <div class="container mx-auto px-4 reveal-stagger">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In Touch</h2>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">Get In Touch</h2>
                 <div class="w-16 h-1 bg-blue-500 mx-auto"></div>
-                <p class="text-gray-600 mt-4 max-w-2xl mx-auto">
+                <p class="mt-4 max-w-2xl mx-auto" style="color: #a1a1aa;">
                     Have a project in mind or want to work together? Feel free to contact me.
                 </p>
             </div>
 
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-10 md:mb-0 md:pr-8">
-                    <div class="bg-gray-50 p-8 rounded-lg shadow-md">
-                        <h3 class="text-2xl font-bold mb-6">Contact Information</h3>
+                    <div class="p-8 rounded-lg shadow-lg" style="background-color: #1a1a1a; border: 1px solid #262626;">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Contact Information</h3>
                         <div class="flex items-start mb-6">
                             <div class="bg-blue-500 text-white p-3 rounded-full mr-4">
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Location</h4>
-                                <p class="text-gray-600">Edmonton, Alberta</p>
+                                <h4 class="font-bold text-white">Location</h4>
+                                <p style="color: #a1a1aa;">Edmonton, Alberta</p>
                             </div>
                         </div>
                         <div class="flex items-start mb-6">
@@ -776,8 +877,8 @@
                                 <i class="fas fa-envelope"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Email</h4>
-                                <p class="text-gray-600">squarevendo@gmail.com</p>
+                                <h4 class="font-bold text-white">Email</h4>
+                                <p style="color: #a1a1aa;">squarevendo@gmail.com</p>
                             </div>
                         </div>
                         <div class="flex items-start mb-6">
@@ -785,8 +886,8 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Phone</h4>
-                                <p class="text-gray-600">+1 (780) 235-6518</p>
+                                <h4 class="font-bold text-white">Phone</h4>
+                                <p style="color: #a1a1aa;">+1 (780) 235-6518</p>
                             </div>
                         </div>
                         <div class="flex items-start">
@@ -794,15 +895,16 @@
                                 <i class="fas fa-globe"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold">Website</h4>
-                                <p class="text-gray-600">www.squarevendo.com</p>
+                                <h4 class="font-bold text-white">Website</h4>
+                                <p style="color: #a1a1aa;">www.squarevendo.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="md:w-1/2">
-                    <form id="contact-form" class="bg-gray-50 p-8 rounded-lg shadow-md"
+                    <form id="contact-form" class="p-8 rounded-lg shadow-lg"
+                    style="background-color: #1a1a1a; border: 1px solid #262626;"
                     action="https://api.web3forms.com/submit" method="POST">
                     <input type="hidden" name="access_key" value="03f0418c-3a41-464d-8d1f-dcf7e91129df">
                     <input type="hidden" name="redirect" value="https://squarevendo.com/success.html">
@@ -812,28 +914,28 @@
                     <input type="hidden" name="form-name" value="contact-form">
 
                     <div class="mb-6">
-                        <label for="name" class="block text-gray-800 font-medium mb-2">Your Name</label>
+                        <label for="name" class="block text-white font-medium mb-2">Your Name</label>
                         <input type="text" id="name" name="name"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none text-black placeholder-white"
-                            required>
+                            class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                            style="background-color: #262626; border: 1px solid #404040;" placeholder="Your name" required>
                     </div>
                     <div class="mb-6">
-                        <label for="email" class="block text-gray-800 font-medium mb-2">Your Email</label>
+                        <label for="email" class="block text-white font-medium mb-2">Your Email</label>
                         <input type="email" id="email" name="email"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black placeholder-white"
-                            required>
+                            class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                            style="background-color: #262626; border: 1px solid #404040;" placeholder="your@email.com" required>
                     </div>
                     <div class="mb-6">
-                        <label for="subject" class="block text-gray-800 font-medium mb-2">Subject</label>
+                        <label for="subject" class="block text-white font-medium mb-2">Subject</label>
                         <input type="text" id="subject" name="subject"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black placeholder-white"
-                            required>
+                            class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                            style="background-color: #262626; border: 1px solid #404040;" placeholder="Subject" required>
                     </div>
                     <div class="mb-6">
-                        <label for="message" class="block text-gray-800 font-medium mb-2">Your Message</label>
+                        <label for="message" class="block text-white font-medium mb-2">Your Message</label>
                         <textarea id="message" name="message" rows="5"
-                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 text-black placeholder-white"
-                            required></textarea>
+                            class="w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+                            style="background-color: #262626; border: 1px solid #404040;" placeholder="Your message" required></textarea>
                     </div>
                     <button type="submit" id="submit-button"
                         class="w-full bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition-colors">
@@ -847,7 +949,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-12">
+    <footer class="text-white py-12" style="background-color: #0d0d0d; border-top: 1px solid #262626;">
         <div class="container mx-auto px-4">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
@@ -889,6 +991,18 @@
 
     <!-- JavaScript -->
     <script>
+        // Scroll-triggered reveal – content appears when it enters view
+        const revealSections = document.querySelectorAll('.reveal-on-scroll');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        revealSections.forEach(section => revealObserver.observe(section));
+
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -936,10 +1050,14 @@
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
                 // Update active button
-                filterButtons.forEach(btn => btn.classList.remove('bg-blue-500', 'text-white'));
-                filterButtons.forEach(btn => btn.classList.add('bg-gray-200', 'text-gray-800'));
-                button.classList.remove('bg-gray-200', 'text-gray-800');
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('bg-blue-500', 'text-white');
+                    btn.classList.add('text-gray-300');
+                    btn.style.backgroundColor = '#262626';
+                });
+                button.classList.remove('text-gray-300');
                 button.classList.add('bg-blue-500', 'text-white');
+                button.style.backgroundColor = '';
 
                 const filter = button.getAttribute('data-filter');
 
@@ -953,43 +1071,37 @@
             });
         });
 
-        // Testimonial Slider
+        // Testimonial Slider (only if elements exist)
         const testimonialWrapper = document.querySelector('.testimonial-wrapper');
         const testimonialSlides = document.querySelectorAll('.testimonial-slide');
         const prevButton = document.getElementById('prev-testimonial');
         const nextButton = document.getElementById('next-testimonial');
-        let currentSlide = 0;
-
-        function showSlide(index) {
-            const slideWidth = testimonialSlides[0].clientWidth;
-            testimonialWrapper.scrollTo({
-                left: slideWidth * index,
-                behavior: 'smooth'
+        if (testimonialWrapper && testimonialSlides.length > 0 && prevButton && nextButton) {
+            let currentSlide = 0;
+            function showSlide(index) {
+                const slideWidth = testimonialSlides[0].clientWidth;
+                testimonialWrapper.scrollTo({ left: slideWidth * index, behavior: 'smooth' });
+                currentSlide = index;
+            }
+            prevButton.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
+                showSlide(currentSlide);
             });
-            currentSlide = index;
+            nextButton.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                showSlide(currentSlide);
+            });
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % testimonialSlides.length;
+                showSlide(currentSlide);
+            }, 5000);
         }
 
-        prevButton.addEventListener('click', () => {
-            currentSlide = (currentSlide - 1 + testimonialSlides.length) % testimonialSlides.length;
-            showSlide(currentSlide);
-        });
-
-        nextButton.addEventListener('click', () => {
-            currentSlide = (currentSlide + 1) % testimonialSlides.length;
-            showSlide(currentSlide);
-        });
-
-        // Auto-slide testimonials every 5 seconds
-        setInterval(() => {
-            currentSlide = (currentSlide + 1) % testimonialSlides.length;
-            showSlide(currentSlide);
-        }, 5000);
-
-        // Theme Toggle
+        // Theme Toggle (only if element exists)
         const themeToggle = document.getElementById('theme-toggle');
+        if (themeToggle) {
         const body = document.body;
         const themeIcon = themeToggle.querySelector('i');
-
         themeToggle.addEventListener('click', () => {
             body.classList.toggle('dark-mode');
 
@@ -1009,6 +1121,7 @@
                 document.documentElement.style.setProperty('--text-color', '#1f2937');
             }
         });
+        }
 
         // Add dark mode styles
         const style = document.createElement('style');
