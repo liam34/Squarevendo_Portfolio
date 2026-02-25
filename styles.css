@@ -65,8 +65,8 @@ nav {
 }
 
 .nav__logo a img {
-  max-width: 100px;
-  max-height: 80px;
+  max-width: 125px;
+  max-height: 100px;
   object-fit: contain;
 }
 
@@ -607,8 +607,8 @@ nav {
   }
 
   .nav__logo a img {
-    max-width: 120px;
-    max-height: 100px;
+    max-width: 150px;
+    max-height: 125px;
   }
 
   .nav__logo .logo-dark {
