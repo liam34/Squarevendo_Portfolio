@@ -1,5 +1,5 @@
 // Loading page with percentage counter - Auto hide after 3 seconds
-window.addEventListener('load', () => {
+function startLoadingAnimation() {
   const loadingPage = document.getElementById('loading-page');
   const percentageCounter = document.getElementById('percentage-counter');
   
@@ -24,7 +24,16 @@ window.addEventListener('load', () => {
       }, 600);
     }, 3000);
   }
-});
+}
+
+// Start animation on page load or if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', startLoadingAnimation);
+} else {
+  startLoadingAnimation();
+}
+
+window.addEventListener('load', startLoadingAnimation);
 
 // Mobile menu toggle (Art Studio pattern)
 const menuBtn = document.getElementById("menu-btn");
