@@ -1,3 +1,31 @@
+// Loading page with percentage counter - Auto hide after 3 seconds
+window.addEventListener('load', () => {
+  const loadingPage = document.getElementById('loading-page');
+  const percentageCounter = document.getElementById('percentage-counter');
+  
+  if (loadingPage && percentageCounter) {
+    let percentage = 0;
+    const duration = 3000; // 3 seconds
+    const increment = 100 / (duration / 50); // Update every 50ms
+    
+    const percentageInterval = setInterval(() => {
+      if (percentage < 100) {
+        percentage = Math.min(percentage + increment, 100);
+        percentageCounter.textContent = Math.floor(percentage) + '%';
+      } else {
+        clearInterval(percentageInterval);
+      }
+    }, 50);
+    
+    setTimeout(() => {
+      loadingPage.classList.add('fade-out');
+      setTimeout(() => {
+        loadingPage.style.display = 'none';
+      }, 600);
+    }, 3000);
+  }
+});
+
 // Mobile menu toggle (Art Studio pattern)
 const menuBtn = document.getElementById("menu-btn");
 const navLinks = document.getElementById("nav-links");
