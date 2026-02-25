@@ -1,39 +1,43 @@
-// Loading page with percentage counter - Auto hide after 3 seconds
-function startLoadingAnimation() {
+// Loading page - Auto hide after 2 seconds with percentage counter
+window.addEventListener('load', () => {
   const loadingPage = document.getElementById('loading-page');
-  const percentageCounter = document.getElementById('percentage-counter');
+  const percentageElement = document.getElementById('loading-percentage');
+  const loadingBarWrapper = document.querySelector('.loading-bar-wrapper');
   
-  if (loadingPage && percentageCounter) {
-    let percentage = 0;
-    const duration = 3000; // 3 seconds
-    const increment = 100 / (duration / 50); // Update every 50ms
+  if (loadingPage && percentageElement && loadingBarWrapper) {
+    let currentPercent = 0;
+    const targetPercent = 100;
+    const duration = 2000; // 2 seconds in milliseconds
+    const startTime = Date.now();
+    const maxBarWidth = 200; // Maximum width in pixels
     
-    const percentageInterval = setInterval(() => {
-      if (percentage < 100) {
-        percentage = Math.min(percentage + increment, 100);
-        percentageCounter.textContent = Math.floor(percentage) + '%';
+    // Animate percentage counter and loading bar
+    const animatePercentage = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      currentPercent = Math.floor(progress * targetPercent);
+      percentageElement.textContent = currentPercent + '%';
+      
+      // Update loading bar width to grow from center
+      const barWidth = (currentPercent / 100) * maxBarWidth;
+      loadingBarWrapper.style.width = barWidth + 'px';
+      
+      if (progress < 1) {
+        requestAnimationFrame(animatePercentage);
       } else {
-        clearInterval(percentageInterval);
+        // After 2 seconds, fade out the loading page
+        setTimeout(() => {
+          loadingPage.classList.add('fade-out');
+          setTimeout(() => {
+            loadingPage.style.display = 'none';
+          }, 600);
+        }, 100);
       }
-    }, 50);
+    };
     
-    setTimeout(() => {
-      loadingPage.classList.add('fade-out');
-      setTimeout(() => {
-        loadingPage.style.display = 'none';
-      }, 600);
-    }, 3000);
+    animatePercentage();
   }
-}
-
-// Start animation on page load or if already loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', startLoadingAnimation);
-} else {
-  startLoadingAnimation();
-}
-
-window.addEventListener('load', startLoadingAnimation);
+});
 
 // Mobile menu toggle (Art Studio pattern)
 const menuBtn = document.getElementById("menu-btn");
