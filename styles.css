@@ -218,8 +218,8 @@ nav {
 }
 
 .nav__logo a img {
-  max-width: 211.25px;
-  max-height: 169px;
+  max-width: 264.0625px;
+  max-height: 211.25px;
   object-fit: contain;
 }
 
@@ -738,8 +738,8 @@ nav {
 }
 
 .footer__top img {
-  max-width: 112px;
-  max-height: 112px;
+  max-width: 140px;
+  max-height: 140px;
   object-fit: contain;
 }
 
@@ -795,8 +795,8 @@ nav {
   }
 
   .nav__logo a img {
-    max-width: 253.5px;
-    max-height: 211.25px;
+    max-width: 316.875px;
+    max-height: 264.0625px;
   }
 
   .nav__logo .logo-dark {
