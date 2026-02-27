@@ -3,7 +3,7 @@
 :root {
   --primary-color: #9a4b7b;
   --primary-color-dark: #782a59;
-  --text-dark: #333333;
+  --text-dark: #2d2d2d;
   --white: #ffffff;
   --max-width: 1200px;
 }
@@ -30,6 +30,7 @@ ul {
 
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #eeede9;
 }
 
 nav {
@@ -215,10 +216,6 @@ header {
   .nav__links a {
     font-weight: 600;
     color: var(--text-dark);
-  }
-
-  .nav__links a:hover {
-    color: var(--primary-color);
   }
 
   header {
