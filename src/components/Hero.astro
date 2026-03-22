@@ -6,7 +6,7 @@
   <div class="hero-content">
     <div class="hero-text">
       <span class="hero-badge">
-        <i class="ri-star-fill"></i> Trusted by 50+ Businesses
+        <i class="ri-star-fill"></i> Trusted by Businesses
       </span>
       <h1>Transform Your Digital Presence</h1>
       <p>
@@ -24,21 +24,18 @@
       </div>
       <div class="hero-stats">
         <div class="stat">
-          <h3>50+</h3>
-          <p>Successful Projects</p>
+          <i class="ri-computer-line"></i>
         </div>
         <div class="stat">
-          <h3>8+</h3>
-          <p>Years Experience</p>
+          <i class="ri-global-line"></i>
         </div>
         <div class="stat">
-          <h3>100%</h3>
-          <p>Client Satisfaction</p>
+          <i class="ri-smartphone-line"></i>
         </div>
       </div>
     </div>
     <div class="hero-visual">
-      <img src="/FOR_X_SQLOGO4.1PX.png" alt="Web Studio" class="hero-image" />
+      <img src="/OfficialSQLogo.png" alt="Web Studio" class="hero-image" />
     </div>
   </div>
 </header>
@@ -152,23 +149,24 @@
 
   .stat {
     padding: 1.5rem;
-    background: white;
+    background: transparent;
     border-radius: 12px;
-    border: 1px solid #e2e8f0;
+    border: none;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .stat h3 {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #3b82f6;
-    margin: 0 0 0.5rem 0;
+  .stat i {
+    font-size: 3rem;
+    color: rgba(59, 130, 246, 0.4);
+    transition: all 0.3s ease;
   }
 
-  .stat p {
-    font-size: 0.9rem;
-    color: #64748b;
-    margin: 0;
+  .stat:hover i {
+    color: rgba(59, 130, 246, 0.7);
+    transform: scale(1.1);
   }
 
   .hero-visual {
