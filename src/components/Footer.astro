@@ -1,0 +1,192 @@
+---
+// Modern Footer Component
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="footer-logo">
+          <img src="/1.png" alt="Squarevendo Logo" />
+        </a>
+        <p>Transform your digital presence with innovative web and app solutions designed for modern businesses.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/squarevendo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://www.linkedin.com/company/squarevendo/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="ri-linkedin-box-line"></i>
+          </a>
+          <a href="https://twitter.com/squarevendo" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="ri-twitter-line"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Get In Touch</h4>
+        <ul>
+          <li><a href="mailto:squarevendo@gmail.com">squarevendo@gmail.com</a></li>
+          <li><a href="tel:+1-780-235-6518">+1 (780) 235-6518</a></li>
+          <li>Edmonton, Alberta</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-divider"></div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 Squarevendo Web Studio. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 4rem 2rem 2rem;
+    margin-top: 6rem;
+    border-top: 1px solid rgba(59, 130, 246, 0.1);
+  }
+
+  .footer-content {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-brand h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo {
+    display: inline-block;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+  }
+
+  .footer-brand p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .footer-socials a {
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3b82f6;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+  }
+
+  .footer-socials a:hover {
+    border-color: #3b82f6;
+    background: rgba(59, 130, 246, 0.1);
+    transform: translateY(-3px);
+  }
+
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-column:last-of-type {
+    text-align: right;
+  }
+
+  .footer-column h4 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-column ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .footer-column a,
+  .footer-column li {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .footer-column a:hover {
+    color: #3b82f6;
+  }
+
+  .footer-divider {
+    height: 1px;
+    background: rgba(59, 130, 246, 0.1);
+    margin: 2rem 0;
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .footer-bottom p {
+    font-size: 0.9rem;
+    color: #94a3b8;
+  }
+
+  .footer-bottom i {
+    color: #ef4444;
+    margin: 0 0.25rem;
+  }
+
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 1rem 2rem;
+    }
+
+    .footer-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+  }
+</style>

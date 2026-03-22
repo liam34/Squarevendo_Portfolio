@@ -1,0 +1,118 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Web Design Mastery | Yoga">
+	<nav style="position: fixed; top: 0; left: 0; width: 100%; background-color: rgba(238, 237, 233, 0.95); backdrop-filter: blur(10px); z-index: 1000; padding: 1rem 0; border-bottom: 1px solid rgba(0, 0, 0, 0.05);">
+		<div style="display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem;">
+			<div class="nav__logo">
+				<a href="#">
+					<img src="/logo-white.png" alt="logo" class="logo-white" style="max-width: 80px; height: auto;" />
+					<img src="/logo-dark.png" alt="logo" class="logo-dark" style="max-width: 80px; height: auto;" />
+				</a>
+			</div>
+			<div class="nav__menu__btn" id="menu-btn" style="display: none; font-size: 1.5rem; cursor: pointer;">
+				<i class="ri-menu-4-line"></i>
+			</div>
+		</div>
+		<ul class="nav__links" id="nav-links" style="display: flex; justify-content: center; gap: 2rem; padding: 0 2rem; margin-top: 0.5rem;">
+			<li><a href="#" style="text-decoration: none; font-weight: 600; color: #2d2d2d;">HOME</a></li>
+			<li><a href="#" style="text-decoration: none; font-weight: 600; color: #2d2d2d;">SERVICE</a></li>
+			<li><a href="#" style="text-decoration: none; font-weight: 600; color: #2d2d2d;">PORTFOLIO</a></li>
+			<li><a href="#" style="text-decoration: none; font-weight: 600; color: #2d2d2d;">CONTACT US</a></li>
+		</ul>
+	</nav>
+
+	<header style="margin-top: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; max-width: 1200px; margin-left: auto; margin-right: auto; padding: 2rem; min-height: 600px;">
+		<div class="header__image">
+			<img src="/header.png" alt="header" style="width: 100%; height: auto; border-radius: 12px;" />
+		</div>
+		<div class="header__content">
+			<h2 style="font-size: 0.875rem; font-weight: 600; letter-spacing: 0.15em; color: #3b82f6; text-transform: uppercase; margin-bottom: 0.5rem;">JOIN OUR CLUB</h2>
+			<h1 style="font-size: 3rem; font-weight: 700; color: #2d2d2d; margin-bottom: 1rem; line-height: 1.2;">Yoga For Your Healthy Life</h1>
+			<p style="font-size: 1rem; line-height: 1.6; color: #4a4a4a; margin-bottom: 2rem;">
+				Join our club and discover the true benefits of yoga. Enhance
+				flexibility, reduce stress, and embrace a healthier, balanced
+				lifestyle with guided sessions made for everyone.
+			</p>
+			<div class="header__btn" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+				<button style="padding: 0.75rem 1.5rem; font-weight: 600; border-radius: 8px; background-color: #3b82f6; color: white; border: none; cursor: pointer; transition: all 0.3s ease;">BOOK NOW</button>
+			</div>
+			<ul class="header__socials" style="display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0;">
+				<li>
+					<a href="#" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #f5f5f1; color: #2d2d2d; text-decoration: none;"><i class="ri-facebook-fill"></i></a>
+				</li>
+				<li>
+					<a href="#" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #f5f5f1; color: #2d2d2d; text-decoration: none;"><i class="ri-twitter-fill"></i></a>
+				</li>
+				<li>
+					<a href="#" style="width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background-color: #f5f5f1; color: #2d2d2d; text-decoration: none;"><i class="ri-instagram-line"></i></a>
+				</li>
+			</ul>
+		</div>
+	</header>
+
+	<script src="https://unpkg.com/scrollreveal"></script>
+	<script>
+		// Mobile menu toggle
+		const menuBtn = document.getElementById("menu-btn");
+		const navLinks = document.getElementById("nav-links");
+
+		if (menuBtn && navLinks) {
+			const menuBtnIcon = menuBtn.querySelector("i");
+
+			menuBtn.addEventListener("click", () => {
+				navLinks.classList.toggle("open");
+				const isOpen = navLinks.classList.contains("open");
+				if (menuBtnIcon) {
+					menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-4-line");
+				}
+			});
+
+			navLinks.addEventListener("click", (e) => {
+				if (e.target.tagName === "A") {
+					navLinks.classList.remove("open");
+					if (menuBtnIcon) {
+						menuBtnIcon.setAttribute("class", "ri-menu-4-line");
+					}
+				}
+			});
+		}
+	</script>
+</Layout>
+
+<style>
+	@media (max-width: 768px) {
+		:global(header) {
+			grid-template-columns: 1fr !important;
+			margin-top: 60px !important;
+			padding: 1rem !important;
+		}
+
+		:global(h1) {
+			font-size: 2rem !important;
+		}
+
+		:global(.nav__menu__btn) {
+			display: block !important;
+		}
+
+		:global(.nav__links) {
+			position: fixed;
+			top: 70px;
+			left: 0;
+			width: 100%;
+			flex-direction: column !important;
+			background-color: #eeede9;
+			padding: 2rem !important;
+			gap: 1rem !important;
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.3s ease;
+		}
+
+		:global(.nav__links.open) {
+			max-height: 300px;
+		}
+	}
+</style>

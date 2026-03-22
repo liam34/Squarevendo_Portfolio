@@ -1,0 +1,240 @@
+---
+// Services component - Modern business services
+---
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Our Expertise</span>
+      <h2>Services We Provide</h2>
+      <p>Comprehensive web development and digital solutions tailored to your business needs</p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-globe-line"></i>
+        </div>
+        <h3>Web Development</h3>
+        <p>
+          Custom-built websites and applications using modern technologies. 
+          Fully responsive, fast-loading, and optimized for conversions.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> Responsive Design</li>
+          <li><i class="ri-check-line"></i> Performance Optimized</li>
+          <li><i class="ri-check-line"></i> SEO Ready</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-design-2-line"></i>
+        </div>
+        <h3>UI/UX Design</h3>
+        <p>
+          Beautiful, intuitive interfaces that users love. Strategic design that 
+          drives engagement and converts visitors into customers.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> User Research</li>
+          <li><i class="ri-check-line"></i> Wireframing</li>
+          <li><i class="ri-check-line"></i> Visual Design</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-smartphone-line"></i>
+        </div>
+        <h3>App Development</h3>
+        <p>
+          Powerful mobile and web applications built with cutting-edge frameworks. 
+          Scalable solutions that grow with your business.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> Frontend & Backend</li>
+          <li><i class="ri-check-line"></i> Database Design</li>
+          <li><i class="ri-check-line"></i> API Integration</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-search-2-line"></i>
+        </div>
+        <h3>SEO & Performance</h3>
+        <p>
+          Get found online with proven SEO strategies. Lightning-fast performance 
+          that improves rankings and user experience.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> On-page Optimization</li>
+          <li><i class="ri-check-line"></i> Speed Optimization</li>
+          <li><i class="ri-check-line"></i> Analytics Setup</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-mail-send-line"></i>
+        </div>
+        <h3>E-commerce Solutions</h3>
+        <p>
+          Complete online store solutions with secure payments and inventory management. 
+          Turn your ideas into revenue.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> Shopping Cart</li>
+          <li><i class="ri-check-line"></i> Payment Integration</li>
+          <li><i class="ri-check-line"></i> Order Management</li>
+        </ul>
+      </div>
+
+      <div class="service-card">
+        <div class="service-icon">
+          <i class="ri-settings-3-line"></i>
+        </div>
+        <h3>Maintenance & Support</h3>
+        <p>
+          Ongoing support and maintenance to keep your website secure and running smoothly. 
+          Latest updates and improvements.
+        </p>
+        <ul class="service-list">
+          <li><i class="ri-check-line"></i> 24/7 Monitoring</li>
+          <li><i class="ri-check-line"></i> Security Updates</li>
+          <li><i class="ri-check-line"></i> Technical Support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .services {
+    padding: 6rem 2rem;
+    background: #ffffff;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .service-card {
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card:hover {
+    border-color: #3b82f6;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .service-icon {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 1rem;
+  }
+
+  .service-card p {
+    color: #64748b;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .service-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #64748b;
+    font-size: 0.95rem;
+  }
+
+  .service-list i {
+    color: #3b82f6;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    .services {
+      padding: 3rem 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .services-grid {
+      gap: 1.5rem;
+    }
+  }
+</style>

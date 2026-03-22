@@ -1,0 +1,362 @@
+---
+// Modern Portfolio/Clients section
+---
+
+<section id="portfolio" class="portfolio">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-badge">Our Work</span>
+      <h2>Featured Projects</h2>
+      <p>Case studies showcasing successful projects we've delivered for our clients</p>
+    </div>
+
+    <div class="filter-bar">
+      <button class="filter-btn active" data-filter="all">All Projects</button>
+      <button class="filter-btn" data-filter="web">Web Design</button>
+      <button class="filter-btn" data-filter="app">App Development</button>
+      <button class="filter-btn" data-filter="ui">E-Commerce</button>
+    </div>
+
+    <div class="portfolio-grid">
+      <div class="portfolio-item" data-category="web">
+        <div class="portfolio-image">
+          <img src="/shiawase.png" alt="Shiawase Ramen House" />
+          <div class="portfolio-overlay">
+            <a href="https://shiawaseramen.ca/" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View Live
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Shiawase Ramen House</h3>
+          <p>Fully responsive restaurant website with menu gallery and booking system</p>
+          <div class="tech-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app">
+        <div class="portfolio-image">
+          <img src="/headway.png" alt="Headway Christian Church" />
+          <div class="portfolio-overlay">
+            <a href="https://headwaychristianchurch.ca/" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View Live
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Headway Christian Church</h3>
+          <p>Responsive website with site navigation and community information</p>
+          <div class="tech-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="ui">
+        <div class="portfolio-image">
+          <img src="/canfil2.png" alt="Can-Fil Contracting" />
+          <div class="portfolio-overlay">
+            <a href="https://canfilcontracting.ca/" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View Live
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Can-Fil Contracting</h3>
+          <p>Construction company portfolio showcasing projects and services</p>
+          <div class="tech-tags">
+            <span>Next.js</span>
+            <span>Tailwind</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="web">
+        <div class="portfolio-image">
+          <img src="/liamPortfolio.png" alt="Portfolio Site" />
+          <div class="portfolio-overlay">
+            <a href="https://liampage.netlify.app/" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View Project
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Developer Portfolio</h3>
+          <p>Personal portfolio website showcasing development work and projects</p>
+          <div class="tech-tags">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="app">
+        <div class="portfolio-image">
+          <img src="/Device.trackker.png" alt="Device Management" />
+          <div class="portfolio-overlay">
+            <a href="https://device-trackker-app.vercel.app/signin" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View App
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Device Tracker App</h3>
+          <p>Building device management system for monitoring equipment and assets</p>
+          <div class="tech-tags">
+            <span>Next.js</span>
+            <span>Turso DB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-item" data-category="web">
+        <div class="portfolio-image">
+          <img src="/imaginative.png" alt="Day Home Website" />
+          <div class="portfolio-overlay">
+            <a href="https://imaginativeyoungminds.ca/" target="_blank" class="portfolio-link">
+              <i class="ri-external-link-line"></i> View Site
+            </a>
+          </div>
+        </div>
+        <div class="portfolio-info">
+          <h3>Imaginative Young Minds</h3>
+          <p>Day home website with warm, welcoming design and family information</p>
+          <div class="tech-tags">
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>HTML</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    filterButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        filterButtons.forEach((btn) => btn.classList.remove("active"));
+        button.classList.add("active");
+
+        const filter = button.getAttribute("data-filter");
+
+        portfolioItems.forEach((item) => {
+          const category = item.getAttribute("data-category");
+          if (filter === "all" || category === filter) {
+            item.style.display = "block";
+            setTimeout(() => item.style.opacity = "1", 0);
+          } else {
+            item.style.opacity = "0";
+            setTimeout(() => item.style.display = "none", 300);
+          }
+        });
+      });
+    });
+  });
+</script>
+
+<style>
+  .portfolio {
+    padding: 6rem 2rem;
+    background: #f8fafc;
+  }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-badge {
+    display: inline-block;
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+  }
+
+  .section-header h2 {
+    font-size: 2.75rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  .section-header p {
+    font-size: 1.1rem;
+    color: #64748b;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.8;
+  }
+
+  .filter-bar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.7rem 1.5rem;
+    background: white;
+    border: 2px solid #e2e8f0;
+    color: #64748b;
+    border-radius: 25px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+
+  .filter-btn:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    border-color: transparent;
+  }
+
+  .portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .portfolio-item {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+
+  .portfolio-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+  }
+
+  .portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-image img {
+    transform: scale(1.05);
+  }
+
+  .portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+  }
+
+  .portfolio-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .portfolio-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+  }
+
+  .portfolio-info {
+    padding: 1.5rem;
+  }
+
+  .portfolio-info h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 0.75rem;
+  }
+
+  .portfolio-info p {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+
+  .tech-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .tech-tags span {
+    background: #f1f5f9;
+    color: #3b82f6;
+    padding: 0.4rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  @media (max-width: 768px) {
+    .portfolio {
+      padding: 3rem 1rem;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+    }
+
+    .filter-bar {
+      gap: 0.75rem;
+    }
+
+    .portfolio-grid {
+      gap: 1.5rem;
+    }
+  }
+</style>
