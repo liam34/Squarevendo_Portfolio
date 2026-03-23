@@ -45,7 +45,7 @@ The `.gitignore` already includes:
 - Email: squarevendo@gmail.com ✓ (business contact, safe to display)
 - Phone: +1 (780) 235-6518 ✓ (business contact, safe to display)
 - Location: Edmonton, Alberta ✓ (safe to display)
-- Social Media: Instagram, LinkedIn, Twitter ✓ (public accounts)
+- Social Media: Instagram, LinkedIn, X ✓ (public accounts)
 
 ### Secure Secrets:
 - Web3Forms API Key ✓ (now in `.env`)
